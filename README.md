@@ -1,22 +1,66 @@
-# Wedding — Gerenciador de Casamentos
+# Sistema Theo & Luísa
 
-Este repositório contém o código-fonte de um site para gerenciar casamentos. O objetivo do projeto é fornecer uma interface para organizar convidados, confirmar presença (RSVP), gerenciar a lista de tarefas, controlar o orçamento, cadastrar fornecedores e acompanhar o cronograma do evento.
+Projeto em PHP + MySQL que entrega um site completo para o casamento de Theo & Luísa (24/10/2026) com:
 
-Funcionalidades (planejadas):
-- Gestão de convidados e RSVP
-- Lista de tarefas e atribuição de responsabilidades
-- Controle de orçamento e pagamentos
-- Cadastro de fornecedores e contatos
-- Cronograma do dia do casamento
-- Exportar lista de convidados e relatórios
+- Landing page pública com informações do evento e ritual das areias.
+- Área exclusiva para convidados acessada via token/QR Code.
+- Painel administrativo para o casal/cerimonialista com controle de convites, check-in e mensagens.
 
-Como começar (versão inicial):
-1. Esta versão inicial já inclui um arquivo estático de demonstração (index.html).
-2. Abra index.html no seu navegador para ver a página inicial de demonstração.
+## Tecnologias
+- PHP 8+
+- MySQL 8+
+- Bootstrap 5, HTML5, CSS3
+- JavaScript com jQuery
 
-Desenvolvimento:
-- Sinta-se à vontade para abrir issues e pull requests com melhorias.
-- Sugestão: utilizar Node.js + Express ou um framework SPA (React/Vue) para a próxima fase.
+## Estrutura
+```
+├── index.php             # Landing page
+├── convidado.php         # Área do convidado (acesso via token)
+├── admin/
+│   ├── login.php
+│   ├── dashboard.php
+│   ├── convites.php
+│   ├── recepcao.php
+│   ├── recepcao_api.php
+│   ├── mensagens.php
+│   ├── gerar_qr.php
+│   └── logout.php
+├── includes/
+│   ├── config.php        # Configuração e conexão PDO
+│   ├── funcoes.php       # Funções utilitárias
+│   ├── auth.php          # Autenticação de admins
+│   └── phpqrcode/        # Biblioteca para gerar QR Code
+├── assets/
+│   ├── css/style.css
+│   └── js/main.js
+├── mock_static/          # Versões estáticas (HTML puro) das telas principais
+│   ├── index.html
+│   ├── convidado.html
+│   └── admin/
+│       ├── login.html
+│       ├── dashboard.html
+│       ├── convites.html
+│       ├── recepcao.html
+│       ├── mensagens.html
+│       └── gerar_qr.html
+└── database.sql          # Script de criação das tabelas
+```
 
-Licença:
-- Coloque aqui a licença desejada (por exemplo, MIT).
+## Banco de dados
+Importe `database.sql` em um banco MySQL vazio. Ele cria as tabelas `convites`, `mensagens_convidados` e `usuarios`, além de inserir um usuário admin padrão (`admin@seusistema.com` / senha `mudar123`).
+
+## Configuração
+1. Ajuste as constantes de `includes/config.php` com os dados do seu banco e domínio.
+2. Configure o host para apontar para a pasta do projeto.
+3. Faça login em `/admin/login.php` com o usuário padrão e comece a cadastrar convites.
+
+### Pasta mock_static
+Se precisar demonstrar o layout sem rodar PHP/MySQL, use os arquivos em `mock_static/`. Eles reproduzem os fluxos principais
+com HTML estático (landing, área do convidado e principais telas do painel) para apresentações ou validações rápidas.
+
+## Recursos principais
+- Geração automática de tokens e QR Codes para cada convite.
+- Formulário de RSVP e recados diretamente na página do convidado.
+- Painel com estatísticas, lista de mensagens e tela mobile-friendly para check-in (scanner QR + busca por nome).
+
+Sinta-se à vontade para personalizar textos, imagens e estilos para combinar com o layout final do casamento!
