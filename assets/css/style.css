@@ -1,0 +1,65 @@
+:root {
+    --azul: #1f3c88;
+    --lavanda: #c4a8e1;
+    --dourado: #c29b40;
+    --madeira: #cfa26e;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    color: #2c2c2c;
+    background-color: #f5f3f8;
+}
+
+.hero {
+    background: linear-gradient(135deg, rgba(31, 60, 136, 0.9), rgba(196, 168, 225, 0.9)), url('../img/hero-bg.jpg') center/cover;
+    color: #fff;
+    padding: 120px 0;
+}
+
+.section-title {
+    color: var(--azul);
+    font-weight: 600;
+}
+
+.timeline {
+    border-left: 3px solid var(--lavanda);
+    padding-left: 20px;
+}
+
+.timeline-item {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--azul);
+    position: absolute;
+    left: -28px;
+    top: 5px;
+}
+
+.card-presentes {
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.dresscode-list li {
+    margin-bottom: 8px;
+}
+
+.section-madeira {
+    background: #fdf8f2;
+    border: 2px dashed rgba(194, 155, 64, 0.4);
+    border-radius: 16px;
+    padding: 30px;
+}
+
+footer {
+    background: var(--azul);
+    color: #fff;
+}
