@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel - Convites</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Convites</h2>
+        <a href="dashboard.html" class="btn btn-outline-secondary btn-sm">Voltar</a>
+    </div>
+    <div class="card mb-4">
+        <div class="card-header bg-white">
+            <h5 class="mb-0">Adicionar convite</h5>
+        </div>
+        <div class="card-body">
+            <form class="row g-3">
+                <div class="col-md-5">
+                    <label class="form-label">Nome impresso</label>
+                    <input type="text" class="form-control" placeholder="Família Borges">
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">Quantidade</label>
+                    <input type="number" class="form-control" value="2">
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">Mesa</label>
+                    <input type="number" class="form-control" placeholder="08">
+                </div>
+                <div class="col-md-3 d-flex align-items-end">
+                    <button class="btn btn-primary w-100" type="button">Salvar convite</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="table-responsive">
+            <table class="table align-middle mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Qtde</th>
+                        <th>Mesa</th>
+                        <th>RSVP</th>
+                        <th>Check-in</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Família Borges</td>
+                        <td>2</td>
+                        <td>08</td>
+                        <td><span class="badge bg-success">Vai</span></td>
+                        <td><span class="badge bg-secondary">Não chegou</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary">Editar</button>
+                            <button class="btn btn-sm btn-outline-success">Gerar QR</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Clara & João</td>
+                        <td>1</td>
+                        <td>05</td>
+                        <td><span class="badge bg-warning text-dark">Pendente</span></td>
+                        <td><span class="badge bg-secondary">Não chegou</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary">Editar</button>
+                            <button class="btn btn-sm btn-outline-success">Gerar QR</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tia Lúcia</td>
+                        <td>1</td>
+                        <td>-</td>
+                        <td><span class="badge bg-danger">Não vai</span></td>
+                        <td><span class="badge bg-secondary">Não chegou</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary">Editar</button>
+                            <button class="btn btn-sm btn-outline-success">Gerar QR</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
